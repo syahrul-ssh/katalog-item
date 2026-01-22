@@ -31,7 +31,7 @@ npm run start:dev
 
 #### Build & Run Application
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ### 5. API Collection
