@@ -4,14 +4,27 @@ import { ItemsService } from './items.service';
 
 describe('ItemsController', () => {
   let controller: ItemsController;
+  let service: ItemsService;
+
+  const mockItemsService = {
+    create: jest.fn(),
+    findAll: jest.fn(),
+    findOne: jest.fn(),
+    update: jest.fn(),
+    remove: jest.fn(),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ItemsController],
-      providers: [ItemsService],
+      providers: [{
+        provide: ItemsService,
+        useValue: mockItemsService,
+      }],
     }).compile();
 
     controller = module.get<ItemsController>(ItemsController);
+    service = module.get<ItemsService>(ItemsService);
   });
 
   it('should be defined', () => {

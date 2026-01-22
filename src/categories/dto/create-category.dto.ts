@@ -1,5 +1,5 @@
 import { IsEnum, IsNotEmpty } from "class-validator";
-import { CategoryEnum } from "src/utils/enum/category.enum";
+import { CategoryEnum } from "../../utils/enum/category.enum";
 
 export class CreateCategoryDto {
   @IsNotEmpty()
