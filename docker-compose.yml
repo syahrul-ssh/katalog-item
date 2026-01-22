@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  katalog-item:
+    container_name: katalog-item
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./database.sqlite:/app/database.sqlite
+    restart: unless-stopped
